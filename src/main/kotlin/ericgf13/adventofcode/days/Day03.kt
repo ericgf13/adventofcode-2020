@@ -10,7 +10,7 @@ class Day03 : Day(3) {
     private val trees = mutableListOf<Coordinate>()
 
     init {
-        input.mapIndexed { y, line ->
+        input.forEachIndexed { y, line ->
             line.forEachIndexed { x, square -> if (square == '#') trees.add(Coordinate(x, y)) }
         }
     }
