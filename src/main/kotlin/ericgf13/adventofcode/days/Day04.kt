@@ -4,7 +4,7 @@ import ericgf13.adventofcode.Day
 
 class Day04 : Day(4) {
     private val input = getInputAsString()
-    private val passportMap = input.split("\r\n\r\n")
+    private val passports = input.split("\r\n\r\n")
             .map { passport ->
                 passport.replace("\r\n", " ")
                         .split(" ")
@@ -13,11 +13,11 @@ class Day04 : Day(4) {
             }.toList()
 
     override fun part1(): String {
-        return (passportMap.filter { isPassportValid(it, false) }.count()).toString()
+        return (passports.filter { isPassportValid(it, false) }.count()).toString()
     }
 
     override fun part2(): String {
-        return (passportMap.filter { isPassportValid(it, true) }.count()).toString()
+        return (passports.filter { isPassportValid(it, true) }.count()).toString()
     }
 
     private fun isPassportValid(passport: Map<String, String>, fullCheck: Boolean): Boolean {
