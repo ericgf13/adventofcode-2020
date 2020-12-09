@@ -33,7 +33,7 @@ class Day08 : Day(8) {
             }
 
             if (index >= instructions.size) {
-                return "SUCCESS=$acc"
+                return "SUCCESS$acc"
             }
         }
     }
@@ -53,7 +53,7 @@ class Day08 : Day(8) {
 
                 val result = execute(tmpInstructions)
                 if (result.startsWith("SUCCESS")) {
-                    return result.removePrefix("SUCCESS=")
+                    return result.removePrefix("SUCCESS")
                 }
             }
         }
